@@ -46,7 +46,7 @@ export class CustomerService {
             );
     }
 
-    deleteCustomer(id: string): Observable<Customer> {
+    deleteCustomer(id: String): Observable<Customer> {
         return this.http.delete<Customer>(environment.api_url + 'customer/' + id, httpOptions)
             .pipe(
                 catchError(this.handleError)

@@ -17,6 +17,8 @@ import { JwtService } from './jwt.service';
 import { AuthGuard } from './auth-guard';
 import { IsAuthenticatedDirective } from './is-authenticated.directive';
 import { httpInterceptorProviders } from './interceptors';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -72,7 +74,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     httpInterceptorProviders,
