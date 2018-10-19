@@ -1,0 +1,13 @@
+<div class="navbar">
+  <a>{{title}}</a>
+  <a routerLink="/customers">Home</a>
+  <div style="float:right!important">
+    <a *appIsAuthenticated="false" routerLink="/register">Register</a>
+    <a *appIsAuthenticated="false" routerLink="/login">Login</a>
+    <a *appIsAuthenticated="true" [routerLink]="" (click)="logout()">LogOut</a>
+  </div>
+</div>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
